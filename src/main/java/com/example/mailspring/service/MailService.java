@@ -13,13 +13,15 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class MailService {
-
-    private final JavaMailSender javaMailSender;
+    private static final Logger log = LoggerFactory.getLogger(MailService.class);
+    private JavaMailSender javaMailSender;
 
     public void mailSender() throws MessagingException, IOException {
         System.out.println("Hello im here");
